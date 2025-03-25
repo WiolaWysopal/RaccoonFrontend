@@ -71,3 +71,34 @@ serwer odpowiada, dostarczając żądane dane.
    `Accept-Encoding`
    dzięki temu serwer może dostosować odpowiedź do formatu obsługiwanego przez klienta.
 
+## Analiza 3 popularnych dostawców hostingowych:
+
+Analizując oferty trzech popularnych dostawców usług hostingowych: Bluehost, SiteGround i Amazon Web Services (AWS), przedstawiam poniższą tabelę porównawczą uwzględniającą typy hostingu, ceny, przestrzeń dyskową, przepustowość oraz dodatkowe funkcje.
+
+| Dostawca  | Typ hostingu   | Cena miesięczna | Przestrzeń dyskowa | Przepustowość   | Dodatkowe funkcje |
+|-----------|----------------|-----------------|--------------------|-----------------|-------------------|
+| Bluehost  | Współdzielony  | $2.95           | 50 GB SSD          | Nielimitowana   | Darmowa domena na 1 rok, bezpłatny certyfikat SSL, 1-klickowe instalacje aplikacji |
+| SiteGround| Współdzielony  | $3.99           | 10 GB SSD          | Nielimitowana   | Darmowa codzienna kopia zapasowa, bezpłatny certyfikat SSL, CDN Cloudflare |
+| AWS       | Chmura         | Zgodnie z użyciem| Zgodnie z użyciem  | Zgodnie z użyciem| Elastyczność skalowania, płatność za użycie |
+
+Rekomendacja dla niewielkiej strony osobistej:
+
+Dla niewielkiej strony osobistej zalecam wybór **Bluehost**. Oferuje on przystępne ceny, znaczną przestrzeń dyskową oraz dodatkowe funkcje, takie jak darmowa domena i certyfikat SSL, co jest korzystne dla początkujących użytkowników. Jest również oficjalnie rekomendowany przez WordPress, co świadczy o jego niezawodności i kompatybilności z popularnymi systemami zarządzania treścią.
+
+Wyjaśnienie pojęć:
+
+- **Hosting współdzielony:** 
+    - forma hostingu, w której wiele stron internetowych dzieli te same zasoby serwera, takie jak pamięć i moc obliczeniowa. Jest to najczęściej wybierana opcja dla małych i średnich stron ze względu na niskie koszty.
+
+- **VPS (Virtual Private Server):** 
+    - typ hostingu, który oferuje wirtualnie wydzieloną część serwera fizycznego. Użytkownicy mają większą kontrolę nad swoimi zasobami i konfiguracją, co jest przydatne dla bardziej wymagających aplikacji.
+
+- **Hosting dedykowany:** 
+    - usługa, w której klient otrzymuje cały serwer do wyłącznego użytku. Zapewnia to pełną kontrolę nad zasobami i konfiguracją, jednak jest droższe i bardziej skomplikowane w zarządzaniu.
+
+- **Hosting w chmurze:** 
+    - usługa polegająca na przechowywaniu danych i aplikacji na wirtualnych serwerach, które korzystają z zasobów rozproszonych w sieci. Oferuje elastyczność i skalowalność, umożliwiając dostosowanie zasobów do aktualnych potrzeb.
+
+- **Przepustowość:** 
+    - maksymalna ilość danych, które mogą być przesyłane przez łącze internetowe w jednostce czasu. W kontekście hostingu odnosi się do ilości danych, które użytkownicy mogą pobrać ze strony w określonym czasie, co wpływa na szybkość ładowania i dostępność strony.
+
