@@ -44,3 +44,30 @@ niego odpowiedzi. Przykłady klientów to:
 
 W komunikacji sieciowej klient i serwer współpracują – klient wysyła żądanie, a 
 serwer odpowiada, dostarczając żądane dane.
+
+## Nagłówki żądań (Request Headers) i ich przeznaczenie:
+
+1. `User-Agent` – identyfikuje przeglądarkę i system operacyjny użytkownika. Wartość:
+   `Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 CrKey/1.54.250320`
+   serwer może na tej podstawie dostosować treść strony (np. wersja mobilna lub desktopowa).
+
+2. `Accept` – informuje serwer, jakie typy treści klient akceptuje. Wartość:
+   `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7`
+   oznacza, że przeglądarka preferuje format HTML, ale obsługuje też obrazy WebP i AVIF.
+
+3. `Cookie` – zawiera dane sesyjne i identyfikatory użytkownika przechowywane w plikach cookie. Serwer może wykorzystać je do personalizacji treści lub uwierzytelniania.
+
+## Nagłówki odpowiedzi (Response Headers) i ich przeznaczenie:
+
+1. `Cache-Control` – określa, jak długo treść może być przechowywana w pamięci podręcznej. Wartość:
+   `public, max-age=31536000`
+   oznacza, że zasób może być buforowany przez rok (31 536 000 sekund).
+
+2. `Content-Encoding` – informuje, czy odpowiedź została skompresowana. Wartość:
+   `gzip`
+   oznacza, że serwer skompresował treść, aby przyspieszyć ładowanie strony.
+
+3. `Vary` – wskazuje, że treść może się różnić w zależności od nagłówka Accept-Encoding. Wartość:
+   `Accept-Encoding`
+   dzięki temu serwer może dostosować odpowiedź do formatu obsługiwanego przez klienta.
+
