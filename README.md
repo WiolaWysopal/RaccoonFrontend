@@ -170,3 +170,58 @@ Wynik:
    - Przeglądarka łączy się z serwerem Wikipedia i pobiera 
      stronę www.
 
+## Działanie przeglądarek internetowych:
+
+1. Sprawdzenie `Cache DNS`:
+   - Przeglądarka sprawdza, czy adres IP dla danej domeny znajduje sie w lokalnej pamięci `cache`.
+   - Jesli nie, wysyła zapytanie do lokalnego serwera DNS.
+
+2. Zapytanie `DNS` i zamiana na adres `IP`:
+   - Lokalny serwer DNS sprawdza, czy zna adres IP domeny.
+   - Jeśli nie, przekazuje zapytanie do serwerów wyższego poziomu.
+   - Po uzyskaniu adresu IP przesyła go do przeglądarki.
+
+3. Nawiązywanie połączenia `TCP/IP`:
+   - Przeglądarka inicjuje połączenie z serwerem docelowym.
+   - Używa do tego protokolu `TCP/IP` (trzy-etapowy `handshake`).
+   - Jeśli strona korzysta z `HTTPS`, rozpoczyna się negocjacja `TLS`.
+
+4. Wysyłanie zadania `HTTP GET`:
+   - Przeglądarka wysyła zadanie `HTTP GET` do serwera.
+   - Może zawieraż nagłówki takie jak `User-Agent` czy `Cookies`.
+
+5. Otrzymanie odpowiedzi `HTTPS`:
+   - Serwer odpowiada kodem statusu (np. `200 OK` lub `404 Not Found`).
+   - Wysyła treść strony w formie dokumentu `HTML`.
+
+6. Parsowanie i interpretacja `HTML`:
+   - Przeglądarka analizuje kod `HTML` i buduje model `DOM` (_Document 
+     Object Model_).
+
+7. Wyszukiwanie i ładowanie zasobów:
+   - Przeglądarka analizuje znaczniki <link>, <script>, <img>  i pobiera dodatkowe pliki (`CSS`, `JS`, obrazy).
+
+8. Parsowanie i stylizacja `CSS`:
+   - Przeglądarka przetwarza pliki `CSS` i tworzy model `CSSOM`.
+   - Łączy go z `DOM`, tworząc `Render Tree`.
+
+9. Renderowanie strony:
+   - Przeglądarka oblicza rozmieszczenie elementów na stronie (`layout`).
+   - Generuje piksele i wyświetla treść na ekranie.
+
+10. Wykonywanie skryptów `JS`:
+    - Przeglądarka interpretuje i uruchamia kod JS.
+    - Może on dynamicznie zmieniać zawartość `DOM` i `CSSOM`.
+
+11. Interacja użytkownika:
+    - Strona jest w pełni zaladowana, użytkownik może na niej działać.
+    - Dalsze akcje (np. kliknięcia) mogą generować kolejne zapytania HTTP.
+
+### Pojęcia:
+
+- Silnik renderujący - mechanizm przeglądarki odpowiedzialny za interpretację HTML, CSS i JS.
+- DOM (Document Object Model) - struktura drzewa reprezentująca elementy strony.
+- TCP/IP - zestaw protokołów komunikacyjnych w internecie.
+- Parsowanie HTML - analiza kodu HTML i budowanie struktury DOM.
+- Renderowanie CSS - przekształcanie stylów na wygląd elementów strony.
+
