@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Strona rejestracyjna z formularzem do wpisania danych użytkownika, w tym imienia, nazwiska, e-maila i hasła.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Twoje Imię">
+    <meta property="og:title" content="My Simple Page">
+    <meta property="og:description" content="Strona rejestracyjna z formularzem użytkownika.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.przykladowastrona.pl">
+    <meta property="og:image" content="https://www.przykladowastrona.pl/images/og-image.jpg">
+    <title>Rejestracja użytkownika - My Simple Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="main-header">Witaj na mojej stronie!</h1>
+    </header>
+    
+    <main>
+        <form aria-labelledby="main-form">
+            <h2>Formularz rejestracyjny</h2>
+            
+            <label for="fname">Imię:</label><br>
+            <input type="text" id="fname" name="fname" required aria-required="true" aria-label="Wpisz swoje imię"><br>
+            
+            <label for="lname">Nazwisko:</label><br>
+            <input type="text" id="lname" name="lname" required aria-required="true" aria-label="Wpisz swoje nazwisko"><br>
+            
+            <label for="email">Adres e-mail:</label><br>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required aria-required="true" aria-label="Wpisz swój adres e-mail" placeholder="example@mail.com"><br>
+
+            <label for="password">Hasło:</label><br>
+            <input type="password" id="password" name="password" minlength="8" required aria-required="true" aria-label="Wpisz swoje hasło" placeholder="Co najmniej 8 znaków"><br>
+
+            <section class="terms-box" aria-labelledby="terms-label">
+                <h3 id="terms-label">Regulamin</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada mauris at tincidunt laoreet. Aenean eget porta orci, eu dictum libero. Maecenas a tincidunt elit. Etiam eget tortor lorem...</p>
+            </section>
+
+            <input type="checkbox" id="accept" name="accept" value="Accept" aria-checked="false" required>
+            <label for="accept"> Akceptuję ten regulamin</label><br>
+
+            <button type="submit" aria-label="Zatwierdź formularz rejestracyjny">Zatwierdź</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Twoje Imię. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
