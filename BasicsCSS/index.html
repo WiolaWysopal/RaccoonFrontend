@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Strona rejestracyjna z formularzem do wpisania danych użytkownika, w tym imienia, nazwiska, e-maila i hasła.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Twoje Imię">
+    <meta property="og:title" content="My Simple Page">
+    <meta property="og:description" content="Strona rejestracyjna z formularzem użytkownika.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.przykladowastrona.pl">
+    <meta property="og:image" content="https://www.przykladowastrona.pl/images/og-image.jpg">
+    <title>User Registration - My Simple Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="main-header">Welcome on my page!</h1>
+    </header>
+    
+    <main>
+        <form aria-labelledby="main-form">
+            <h2>Registration form</h2>
+            
+            <label for="fname">Name:</label><br>
+            <input type="text" id="fname" name="fname" required aria-required="true" aria-label="Type your name"><br>
+            
+            <label for="lname">Surname:</label><br>
+            <input type="text" id="lname" name="lname" required aria-required="true" aria-label="Type your surname"><br>
+            
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required aria-required="true" aria-label="Type your e-mail" placeholder="example@mail.com"><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" minlength="8" required aria-required="true" aria-label="Wpisz swoje hasło" placeholder="At least 8 characters"><br>
+
+            <section class="terms-box" aria-labelledby="terms-label">
+                <h3 id="terms-label">Disclaimer</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis ex sed interdum lobortis. 
+                    Aliquam erat volutpat. Cras faucibus malesuada leo, in vehicula mi porttitor efficitur. 
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Donec ac quam a sapien pulvinar pulvinar. Maecenas dignissim dolor non nibh posuere molestie. 
+                    Suspendisse iaculis rhoncus odio, et hendrerit diam rutrum quis. Vestibulum tempus faucibus metus, 
+                    quis rhoncus eros maximus eget. Aenean aliquet lectus luctus dolor sagittis hendrerit at sed diam. 
+                    Vestibulum efficitur ut ante ut molestie. Maecenas vel euismod ligula. Morbi ac cursus sem, 
+                    vitae auctor libero. Donec sit amet aliquet dolor. Donec ornare pellentesque fermentum.
+                </p>
+            </section>
+
+            <input type="checkbox" id="accept" name="accept" value="Accept" aria-checked="false" required>
+            <label for="accept"> I accept this disclaimer</label><br>
+
+            <button type="submit" aria-label="Submit registration form">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RaccoonFrontend. All rights reserved.</p>
+    </footer>
+</body>
+</html>
