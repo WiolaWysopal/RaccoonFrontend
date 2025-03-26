@@ -199,7 +199,7 @@ Wynik:
      Object Model_).
 
 7. Wyszukiwanie i ładowanie zasobów:
-   - Przeglądarka analizuje znaczniki <link>, <script>, <img>  i pobiera dodatkowe pliki (`CSS`, `JS`, obrazy).
+   - Przeglądarka analizuje znaczniki `<link>`, `<script>`, `<img>` i pobiera dodatkowe pliki (`CSS`, `JS`, obrazy).
 
 8. Parsowanie i stylizacja `CSS`:
    - Przeglądarka przetwarza pliki `CSS` i tworzy model `CSSOM`.
@@ -225,3 +225,82 @@ Wynik:
 - Parsowanie HTML - analiza kodu HTML i budowanie struktury DOM.
 - Renderowanie CSS - przekształcanie stylów na wygląd elementów strony.
 
+## Podstawy HTML:
+
+### Tagi HTML
+
+- Tagi HTML - znaczniki używane do strukturyzowania treści 
+  na stronie internetowej.
+   - Każdy tag składa się z nawiasów ostrokątnych (`< >`) i nazwy.
+   - Większość tagów ma postać otwierającą i zamykającą: `<p>To jest akapit</p>`
+   - Niektóre tagi są samotne (np. `<br>` dla nowej linii).
+```html
+Przykłady tagów:
+  - <h1> do <h6> - nagłówki
+  - <p> - akapit
+  - <a> - link
+  - <img> - obrazek
+  - <div> - kontener blokowy
+```
+### Elementy blokowe i liniowe
+- **Elementy blokowe** zajmują całą szerokość dostępnego miejsca 
+  i zaczynają nową linię.
+- **Elementy liniowe** zajmują tylko tyle miejsca, ile potrzeba 
+  i nie przerywają linii.
+
+```html
+Przykłady elementów blokowych:
+  - <div>
+  - <p>
+  - <h1> do <h6>
+  - <ul>, <ol>, <li>
+```
+
+```html
+Przykłady elementów liniowych:
+  - <span>
+  - <a>
+  - <strong>, <em>
+  - <img>
+```
+
+### Atrybuty
+
+- Atrybuty dostarczają dodatkowych informacji o elementach HTML.
+- Są umieszczane w tagu otwierającym.
+- Składają się z nazwy i wartości, np.:
+  `<a href="https://example.com">Kliknij tutaj</a>`
+
+```html
+- Popularne atrybuty:
+  - href (dla <a>) – adres linku
+  - src (dla <img>) – źródło obrazka
+  - alt (dla <img>) – tekst alternatywny
+  - class – określa klasę CSS
+  - id – unikalny identyfikator elementu
+```
+### Struktura dokumentu HTML5
+
+- Dokument HTML5 składa się z następujących sekcji:
+
+```html
+<!DOCTYPE html>  → Określa wersję HTML5
+<html>           → Główny kontener strony
+  <head>        → Sekcja nagłówkowa (metadane)
+    <meta charset="UTF-8">  → Kodowanie znaków
+    <title>Moja Strona</title>  → Tytuł strony
+    <link rel="stylesheet" href="style.css">  → Styl CSS
+  </head>
+  <body>        → Treść strony
+    <header>    → Nagłówek strony
+    <nav>       → Nawigacja
+    <main>      → Główna treść
+    <section>   → Sekcja strony
+    <article>   → Artykuł lub wpis
+    <aside>     → Dodatkowe informacje (np. reklamy, linki)
+    <footer>    → Stopka strony
+  </body>
+</html>
+```
+- HTML5 wprowadził nowe semantyczne znaczniki (`<header>`, 
+  `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`), które poprawiają czytelność kodu.
