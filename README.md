@@ -102,3 +102,71 @@ Wyjaśnienie pojęć:
 - **Przepustowość:** 
     - maksymalna ilość danych, które mogą być przesyłane przez łącze internetowe w jednostce czasu. W kontekście hostingu odnosi się do ilości danych, które użytkownicy mogą pobrać ze strony w określonym czasie, co wpływa na szybkość ładowania i dostępność strony.
 
+## `DNS LOOKUP`
+
+### 1. Wykonanie DNS lookup
+Polecenie w wierszu poleceń Windows: `nslookup wikipedia.org`
+
+Wynik:
+
+`Server:  funbox.home`
+
+`Address:  192.168.1.1`
+
+`Non-authoritative answer:`
+
+`Name:    wikipedia.org`
+
+`Addresses:  2a02:ec80:300:ed1a::1`
+          
+`185.15.59.224`
+
+### 2. Pobranie serwerów nazw (nameservers)
+
+`nslookup -type=NS wikipedia.org`
+
+### 3. Sprawdzenie różnych rekordów DNS
+
+`nslookup -type=A wikipedia.org    # Rekord IPv4`
+`nslookup -type=AAAA wikipedia.org # Rekord IPv6`
+`nslookup -type=CNAME wikipedia.org # Alias (jeśli istnieje)`
+`nslookup -type=MX wikipedia.org   # Serwery pocztowe`
+
+### Pojęcia
+
+- `DNS (Domain Name System)` - system tłumaczący nazwy domenowe (np. wikipedia.org) na adresy IP, które są używane przez urządzenia w sieci.
+
+- `Serwer DNS (Nameserver)` - komputer przechowujący informacje o domenach i ich adresach IP, odpowiadający na zapytania DNS.
+
+- `Adres IP` - numeryczna reprezentacja urządzenia w sieci.
+  Może być w formacie:
+  - `IPv4 (np. 185.15.59.224)`
+  - `IPv6 (np. 2a02:ec80:300:ed1a::1)`
+
+- `Rekordy DNS` - wpisy w bazie danych DNS, które zawierają informacje o domenie:
+  - `A`      - mapuje domenę na adres IPv4
+  - `AAAA`   - mapuje domenę na adres IPv6
+  - `CNAME`  - alias domeny (np. `www.example.com` może wskazywać na `example.com`)
+  - `MX`     - wskazuje serwery obsługujące pocztę e-mail dla domeny
+
+#### Zamiana domeny na adres IP w DNS
+
+1. Zapytanie do lokalnego serwera DNS
+   - Gdy wpisujesz wikipedia.org w przeglądarce, komputer 
+     wysyła zapytanie do lokalnego serwera DNS (zwykle routera 
+     lub serwera dostawcy internetu).
+
+2. Rekurencyjne zapytanie do serwerów DNS
+   - Jeśli lokalny serwer DNS nie zna odpowiedzi, przekazuje 
+     zapytanie do wyższych poziomów DNS, np. serwerów `root` (`.`)
+     `->` serwerów TLD (`.org`) `->` autorytatywnych serwerów Wikipedia.
+
+3. Zwrot adresu IP
+   - Po znalezieniu odpowiedniego rekordu DNS, adres IP domeny 
+     wraca do przeglądarki, która nawiązuje połączenie z 
+     serwerem docelowym.
+
+4. Ładowanie strony
+   - Przeglądarka łączy się z serwerem Wikipedia i pobiera 
+     stronę www.
+
