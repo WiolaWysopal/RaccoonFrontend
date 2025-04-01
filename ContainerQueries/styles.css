@@ -1,0 +1,45 @@
+/* Ustawienia kontenera */
+.container {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: lightgrey;
+    border: 2px solid #333;
+    resize: both;
+    overflow: auto;
+}
+
+/* Domyślny styl dla elementu w kontenerze */
+.box {
+    background-color: steelblue;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+/* Zapytania kontenerowe (Container Queries) */
+
+@container (min-width: 300px) {
+    .box {
+        background-color: royalblue;
+        font-size: 1.2rem;
+    }
+}
+
+@container (min-width: 500px) {
+    .box {
+        background-color: darkblue;
+        font-size: 1.5rem;
+        padding: 3rem;
+    }
+}
+
+@container (min-width: 700px) {
+    .box {
+        background-color: midnightblue;
+        font-size: 2rem;
+        padding: 4rem;
+    }
+}

@@ -304,3 +304,24 @@ Przykłady elementów liniowych:
 ```
 - HTML5 wprowadził nowe semantyczne znaczniki (`<header>`, 
   `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`), które poprawiają czytelność kodu.
+
+## `Container Queries`
+
+`Container Queries` pozwalają na stosowanie reguł stylów zależnych od rozmiaru kontenera, a nie rozmiaru okna przeglądarki (jak ma to miejsce w przypadku tradycyjnych `media queries`). Dzięki temu możesz tworzyć bardziej elastyczne i responsywne układy, które reagują na zmiany rozmiaru samego kontenera, a nie całego widoku strony.
+
+#### Zalety: 
+
+- Zamiast odwoływać się do rozmiaru okna przeglądarki, `container queries` reagują na zmiany w rozmiarze elementu, w którym są zastosowane. Dzięki temu możesz dostosować styl w zależności od przestrzeni dostępnej w danym kontenerze.
+- Pozwalają na tworzenie komponentów, które same dostosowują się do swoich rodziców.
+- Jeśli istnieją elementy, które muszą zmieniać swój układ, rozmiar czcionki lub inne właściwości, w zależności od tego, jak duży jest ich kontener, można użyć `container queries`, zamiast ustawiać reguły zależne od rozmiaru ekranu.
+
+---
+- **Kontenery** w kontekście CSS to element, który zawiera inne elementy w swojej strukturze i zarządza ich rozmieszczeniem, wielkością lub wyglądem. W szczególności w przypadku Container Queries kontener to element HTML, który posiada określony rozmiar, na który mogą reagować inne elementy znajdujące się w jego obrębie.
+- **Jednostki względne** to jednostki miary, których wartość zależy od jakiejś innej wartości, np. od rozmiaru czcionki, szerokości kontenera lub rozmiaru okna przeglądarki. Używanie jednostek względnych pozwala na tworzenie bardziej elastycznych i responsywnych layoutów, które dostosowują się do różnych warunków wyświetlania. 
+
+**Rodzaje jednostek względnych:**
+- **`1em`** to jednostka, która jest równa aktualnemu rozmiarowi czcionki elementu. Jeśli rozmiar czcionki rodzica wynosi `16px`, to `1em` będzie równy `16px`. Używana głównie do określania rozmiarów czcionek, marginesów, odstępów itp.
+- **`1rem`** jest równy rozmiarowi czcionki ustawionemu na elemencie `html`. Jest to jednostka, która odnosi się do rozmiaru czcionki na najwyższym poziomie w dokumencie, a nie do elementu, w którym jest używana.
+- **`vw`** (_viewport width_) i `vh` (_viewport height_) to jednostki, które zależą od rozmiarów okna przeglądarki. `1vw` to `1%` szerokości okna przeglądarki, a `1vh` to `1%` wysokości okna przeglądarki.
+- **`%` (procenty)** są jednostką względną, która odnosi się do rozmiaru rodzica danego elementu. Na przykład, jeśli szerokość rodzica to `500px`, to `50%` tej szerokości będzie równe `250px`.
+
