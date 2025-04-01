@@ -1,0 +1,17 @@
+img {
+    margin: 0;
+    padding:0;
+}
+
+/* Ogólne style dla sekcji */
+section.content {
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid #ccc;
+}
+
+/* Zmiana tła sekcji, jeśli zawiera obrazek */
+section.content:has(img) {
+    background-color: lightblue;
+    border-color: #008cba;
+}
