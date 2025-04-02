@@ -1,0 +1,12 @@
+1. Create a new React application using npx create-react-app my-app.
+2. Navigate to the project directory with cd my-app.
+3. Install Styled Components by running npm install styled-components.
+4. Create a file named src/StyledButton.js.
+5. Import React and styled-components in StyledButton.js.
+6. Define and style a button component using styled.button.
+7. Export the component by adding export default StyledButton;.
+8. Open the src/App.js file.
+9.Import the StyledButton component in App.js.
+10. Place <StyledButton /> inside the <div> tag in App.js.
+11. Start the application by running npm start.
+12. Check the styled component in the browser.
