@@ -1,0 +1,12 @@
+1. Otwórz terminal i wpisz: npx create-react-app moja-aplikacja --template typescript.
+2. Przejdź do folderu projektu: cd moja-aplikacja.
+3. Uruchom aplikację, aby sprawdzić czy działa: npm start. Aplikacja otworzy się pod adresem http://localhost:3000.
+4. W katalogu projektu zainstaluj pandę: npm install @pandacss/dev.
+5. Następnie uruchom konfigurację pandy: npx panda init.
+6. Teraz wygeneruj style: npx panda codegen.
+	WAŻNE: Za każdym razem, gdy zmieniasz konfigurację, uruchom ponownie panda codegen. 
+	       Po poprawnym wykonaniu komendy pojawi się folder styled-system.
+7. 
+
+
+
