@@ -1,0 +1,3 @@
+[submodule "Daml-Sandbox"]
+	path = Daml-Sandbox
+	url = https://github.com/Tomasz-Zdeb/Daml-Sandbox.git
