@@ -325,3 +325,15 @@ Przykłady elementów liniowych:
 - **`vw`** (_viewport width_) i `vh` (_viewport height_) to jednostki, które zależą od rozmiarów okna przeglądarki. `1vw` to `1%` szerokości okna przeglądarki, a `1vh` to `1%` wysokości okna przeglądarki.
 - **`%` (procenty)** są jednostką względną, która odnosi się do rozmiaru rodzica danego elementu. Na przykład, jeśli szerokość rodzica to `500px`, to `50%` tej szerokości będzie równe `250px`.
 
+___
+## Podstawy Gita:
+
+### Tworzenie nowej gałęzi:
+
+W ramach testu utworzono nową gałąź nowa_funkcjonalnosc, w której wprowadzono i zatwierdzono przykładowe zmiany w pliku `README.md`. Wykorzystane komendy:
+
+```
+git branch nowa_funkcjonalnosc
+git checkout nowa_funkcjonalnosc
+```
+
