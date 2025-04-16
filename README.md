@@ -325,3 +325,39 @@ Przykłady elementów liniowych:
 - **`vw`** (_viewport width_) i `vh` (_viewport height_) to jednostki, które zależą od rozmiarów okna przeglądarki. `1vw` to `1%` szerokości okna przeglądarki, a `1vh` to `1%` wysokości okna przeglądarki.
 - **`%` (procenty)** są jednostką względną, która odnosi się do rozmiaru rodzica danego elementu. Na przykład, jeśli szerokość rodzica to `500px`, to `50%` tej szerokości będzie równe `250px`.
 
+## Konfiguracja Webhooka
+
+### Co to jest `Webhook`?
+
+**Webhook** to sposób, w jaki jeden system (w tym przypadku GitHub) może wysłać dane do innego systemu lub usługi, gdy wystąpi określone zdarzenie, na przykład po zdarzeniu `push`. Pozwala to na automatyczne uruchamianie zewnętrznych usług lub skryptów.
+
+### Konfiguracja Webhooka w GitHub
+
+Aby ustawić webhook w swoim repozytorium na GitHubie, który będzie wywoływał zdarzenie po `push`, należy wykonać następujące kroki:
+
+1. **Przejdź do ustawień swojego repozytorium na GitHubie**:
+   - Otwórz swoje repozytorium na GitHubie.
+   - Wejdź w zakładkę **Settings** > **Webhooks**.
+
+2. **Dodaj Webhook**:
+   - Kliknij **Add webhook**.
+   - W polu **Payload URL** wklej adres URL, na który GitHub wyśle dane. Będzie to adres, który GitHub użyje do wysyłania żądań POST, gdy wystąpi zdarzenie. Jeśli nie masz własnej aplikacji, możesz skorzystać z serwisu **Webhook.site**, aby uzyskać tymczasowy URL.
+
+### Korzystanie z Webhook.site
+
+W przykadku braku własnego serwera lub aplikacji można skorzystać z **Webhook.site**, aby łatwo przetestować swój webhook. Serwis ten daje unikalny URL, na którym można odbierać i wyświetlać dane wysyłane przez GitHub.
+
+Uzyskiwanie URL przez **Webhook.site**:
+1. Wejdź na stronę [https://webhook.site](https://webhook.site).
+2. Otrzymasz unikalny URL (np. `https://webhook.site/xxxxxxxxxxxx`).
+3. Skopiuj ten URL i wklej go w pole **Payload URL** w ustawieniach webhooka na GitHubie.
+4. Ustaw **Content type** na **application/json**.
+5. Wybierz, które zdarzenia mają uruchamiać webhook. Możesz wybrać **Just the push event** lub inne, w zależności od swoich potrzeb.
+6. Kliknij **Add webhook**.
+
+### Testowanie Webhooka
+
+Po skonfigurowaniu webhooka, wykonaj `push` do swojego repozytorium GitHub:
+```bash
+git commit -m "Test webhook"
+git push origin main
