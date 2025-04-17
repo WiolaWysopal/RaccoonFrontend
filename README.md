@@ -361,3 +361,34 @@ Po skonfigurowaniu webhooka, wykonaj `push` do swojego repozytorium GitHub:
 ```bash
 git commit -m "Test webhook"
 git push origin main
+```
+
+## Różnica między paczkami produkcyjnymi, a developerskimi
+
+### 1. PACZKI PRODUKCYJNE (`dependencies`)
+
+- Instalacja: `npm install <nazwa-paczki>`
+- Są wymagane do działania aplikacji w środowisku produkcyjnym
+- Przykłady: `express`, `react`, `axios`, `mongoose`
+- W pliku `package.json`:
+  
+  ```json
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+  ```
+
+### 2. PACZKI DEWELOPERSKIE (`devDependencies`)
+
+- Instalacja: `npm install <nazwa-paczki> --save-dev`
+- Używane tylko podczas tworzenia aplikacji (testy, narzędzia, lintery)
+- Nie są potrzebne w produkcji
+- Przykłady: `nodemon`, `eslint`, `jest`, `webpack`
+- W pliku `package.json`:
+
+```json
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+```
+

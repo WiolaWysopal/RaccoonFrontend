@@ -12,5 +12,9 @@
   "dependencies": {
     "express": "^5.1.0",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^9.24.0",
+    "nodemon": "^3.1.9"
   }
 }
