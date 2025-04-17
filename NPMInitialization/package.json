@@ -1,11 +1,12 @@
 {
   "name": "npminitialization",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
+  "description": "Przykładowy pakiet Node.js z Express",
+  "license": "MIT",
+  "author": "Twoje Imię <twoj.email@example.com>",
   "type": "commonjs",
   "main": "index.js",
+  "keywords": ["node", "express", "npm", "example"],
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
