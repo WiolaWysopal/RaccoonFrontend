@@ -425,3 +425,20 @@ npm config get cache
 ```bash
 npm cache verify
 ```
+## Sprawdzanie bezpieczeństwa zależności
+
+### Polecenia
+
+Aby przeskanować projekt pod kątem znanych luk bezpieczeństwa w zainstalowanych pakietach, należy wykonać:
+
+```bash
+npm audit
+```
+
+To polecenie analizuje zależności (zdefiniowane w `package-lock.json`) i porównuje je z bazą danych znanych podatności.
+
+Jeśli zostaną wykryte problemy, można spróbować je automatycznie naprawić:
+
+```bash
+npm audit fix
+```
