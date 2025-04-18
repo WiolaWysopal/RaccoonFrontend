@@ -1,0 +1,45 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.2.0
+2 info using node@v22.14.0
+3 silly config load:file:C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\wiole\OneDrive\Pulpit\RaccoonSoftware\RaccoonFrontend\NPMInitialization\.npmrc
+5 silly config load:file:C:\Users\wiole\.npmrc
+6 silly config load:file:C:\Users\wiole\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install express@99.99.99
+8 verbose argv "install" "express@99.99.99"
+9 verbose logfile logs-max:10 dir:C:\Users\wiole\AppData\Local\npm-cache\_logs\2025-04-18T07_54_55_629Z-
+10 verbose logfile C:\Users\wiole\AppData\Local\npm-cache\_logs\2025-04-18T07_54_55_629Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly logfile done cleaning log files
+14 silly idealTree buildDeps
+15 silly fetch manifest express@99.99.99
+16 silly packumentCache full:https://registry.npmjs.org/express cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/express 170ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/express set size:undefined disposed:false
+19 silly placeDep ROOT express@ REPLACE for: npminitialization@1.0.0 want: 99.99.99
+20 verbose type version
+21 verbose stack express: No matching version found for express@99.99.99.
+21 verbose stack     at module.exports (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\node_modules\npm-pick-manifest\lib\index.js:215:23)
+21 verbose stack     at RegistryFetcher.manifest (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\node_modules\pacote\lib\registry.js:130:54)
+21 verbose stack     at async #fetchManifest (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1202:20)
+21 verbose stack     at async #nodeFromEdge (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1040:19)
+21 verbose stack     at async #buildDepStep (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:904:11)
+21 verbose stack     at async Arborist.buildIdealTree (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:181:7)
+21 verbose stack     at async Promise.all (index 1)
+21 verbose stack     at async Arborist.reify (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:131:5)
+21 verbose stack     at async Install.exec (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\lib\commands\install.js:149:5)
+21 verbose stack     at async Npm.exec (C:\Users\wiole\AppData\Roaming\npm\node_modules\npm\lib\npm.js:208:9)
+22 error code ETARGET
+23 error notarget No matching version found for express@99.99.99.
+24 error notarget In most cases you or one of your dependencies are requesting
+24 error notarget a package version that doesn't exist.
+25 silly unfinished npm timer reify 1744962896071
+26 silly unfinished npm timer reify:loadTrees 1744962896074
+27 verbose cwd C:\Users\wiole\OneDrive\Pulpit\RaccoonSoftware\RaccoonFrontend\NPMInitialization
+28 verbose os Windows_NT 10.0.19045
+29 verbose node v22.14.0
+30 verbose npm  v11.2.0
+31 verbose exit 1
+32 verbose code 1
+33 error A complete log of this run can be found in: C:\Users\wiole\AppData\Local\npm-cache\_logs\2025-04-18T07_54_55_629Z-debug-0.log

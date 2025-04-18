@@ -442,3 +442,26 @@ Jeśli zostaną wykryte problemy, można spróbować je automatycznie naprawić:
 ```bash
 npm audit fix
 ```
+
+## Narzędzia diagnostyczne `npm`
+
+Podczas próby zainstalowania nieistniejącej wersji paczki (`express@99.99.99`) wystąpił błąd `ETARGET`. Do analizy użyto poniższych narzędzi:
+
+### 1. `npm config list`
+Wyświetla konfigurację lokalną i globalną, m.in. ścieżki, wersję Node.js i NPM.
+
+### 2. `npm doctor`
+Przeprowadza diagnostykę środowiska:
+- sprawdza połączenie z rejestrem,
+- weryfikuje wersje Node.js i NPM,
+- sprawdza obecność `git` i ścieżki do binariów.
+
+### 3. Pliki logów
+NPM automatycznie zapisuje logi błędów w katalogu:
+
+```bash
+C:\Users...\AppData\Local\npm-cache_logs\
+```
+
+Logi zawierają szczegóły pomocne przy rozwiązywaniu problemów.
+
