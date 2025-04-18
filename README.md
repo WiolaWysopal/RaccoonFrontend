@@ -391,4 +391,37 @@ git push origin main
     "nodemon": "^3.0.2"
   }
 ```
+## Czyszczenie pamięci podręcznej NPM
 
+### Polecenie
+
+```bash
+npm cache clean --force
+```
+
+### Opis
+
+NPM (_Node Package Manager_) używa pamięci podręcznej (`cache`), aby przyspieszyć instalację pakietów. Czasami jednak `cache` może zawierać nieaktualne lub uszkodzone dane, co powoduje błędy przy instalacji.
+
+Polecenie `npm cache clean` czyści pamięć podręczną. W nowszych wersjach NPM konieczne jest użycie flagi `--force`, ponieważ domyślnie operacja ta jest zablokowana jako potencjalnie niebezpieczna.
+
+### Kiedy stosować
+
+- Problemy z instalacją pakietów
+- Podejrzenie uszkodzenia `cache`
+- Ręczne modyfikacje katalogu `node_modules`
+- Przywracanie czystego środowiska
+
+### Dodatkowe polecenia diagnostyczne
+
+- Sprawdzenie lokalizacji `cache`:
+
+```bash
+npm config get cache
+```
+
+- Weryfikacja zawartości `cache`:
+
+```bash
+npm cache verify
+```
