@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "date-fns": "^4.1.0",
-    "lodash": "^4.17.21",
+    "lodash": "4.17.20",
     "ramda": "^0.30.1"
   },
   "devDependencies": {
