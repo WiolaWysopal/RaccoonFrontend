@@ -504,3 +504,6 @@ Program poprawnie losowo miesza tablicę liczb. Przykład wyników:
 [ 2, 1, 4, 3 ] // npm
 ```
 
+## `pnpm`:
+
+
