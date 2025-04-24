@@ -465,3 +465,42 @@ C:\Users...\AppData\Local\npm-cache_logs\
 
 Logi zawierają szczegóły pomocne przy rozwiązywaniu problemów.
 
+# Projekt demonstracyjny: npm vs Yarn
+
+Ten projekt pokazuje podstawowe operacje zarządzania zależnościami przy użyciu dwóch menedżerów pakietów: npm i Yarn.
+
+## Struktura
+
+- projekt-npm/     ← używa npm
+- projekt-yarn/    ← używa Yarn
+
+## Kroki wykonane w obu projektach
+
+1. Inicjalizacja projektu:
+   - `npm init -y` lub `yarn init -y`
+
+2. Instalacja pakietu lodash:
+   - `npm install lodash`
+   - `yarn add lodash`
+
+3. Aktualizacja pakietów:
+   - `npm update` oraz `npm outdated` (brak nowszych wersji)
+   - `yarn upgrade` oraz `yarn upgrade lodash` (brak nowszych wersji)
+
+4. Test działania:
+   - Plik `index.js` zawiera:
+     ```js
+     const _ = require('lodash');
+     console.log(_.shuffle([1, 2, 3, 4]));
+     ```
+   - Uruchomienie: `node index.js`
+
+## Wynik działania
+
+Program poprawnie losowo miesza tablicę liczb. Przykład wyników:
+
+```bash
+[ 2, 4, 3, 1 ] // yarn 
+[ 2, 1, 4, 3 ] // npm
+```
+
