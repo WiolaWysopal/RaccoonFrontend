@@ -506,4 +506,5 @@ Program poprawnie losowo miesza tablicę liczb. Przykład wyników:
 
 ## `pnpm`:
 
+`pnpm` to menedżer pakietów dla JavaScript i Node.js, który działa szybciej i oszczędza miejsce na dysku. Zamiast przechowywać kopie pakietów w każdym projekcie, używa jednego centralnego magazynu, co przyspiesza instalacje i redukuje zużycie pamięci. Dzięki temu jest bardziej wydajny i bezpieczny niż `npm` czy `Yarn`.
 
