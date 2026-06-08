@@ -1,0 +1,15 @@
+{
+  "name": "own-module-creating",
+  "version": "1.0.0",
+  "description": "A simple library module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Building module...\"",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": ["library", "module"],
+  "author": "Your Name",
+  "license": "ISC",
+  "packageManager": "pnpm@10.9.0"
+}

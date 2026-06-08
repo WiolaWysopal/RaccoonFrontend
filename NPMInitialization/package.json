@@ -1,0 +1,24 @@
+{
+  "name": "npminitialization",
+  "version": "1.0.0",
+  "description": "Przykładowy pakiet Node.js z Express",
+  "license": "MIT",
+  "author": "Twoje Imię <twoj.email@example.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "keywords": ["node", "express", "npm", "example"],
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "echo \"Build step placeholder\"",
+    "test": "echo \"Running tests...\""
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^9.24.0",
+    "nodemon": "^3.1.9"
+  }
+}

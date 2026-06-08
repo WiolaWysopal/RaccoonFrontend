@@ -325,7 +325,7 @@ Przykłady elementów liniowych:
 - **`vw`** (_viewport width_) i `vh` (_viewport height_) to jednostki, które zależą od rozmiarów okna przeglądarki. `1vw` to `1%` szerokości okna przeglądarki, a `1vh` to `1%` wysokości okna przeglądarki.
 - **`%` (procenty)** są jednostką względną, która odnosi się do rozmiaru rodzica danego elementu. Na przykład, jeśli szerokość rodzica to `500px`, to `50%` tej szerokości będzie równe `250px`.
 
-___
+
 ## Podstawy Gita:
 
 ### Tworzenie nowej gałęzi:
@@ -336,4 +336,187 @@ W ramach testu utworzono nową gałąź nowa_funkcjonalnosc, w której wprowadzo
 git branch nowa_funkcjonalnosc
 git checkout nowa_funkcjonalnosc
 ```
+
+## Konfiguracja Webhooka
+
+### Co to jest `Webhook`?
+
+**Webhook** to sposób, w jaki jeden system (w tym przypadku GitHub) może wysłać dane do innego systemu lub usługi, gdy wystąpi określone zdarzenie, na przykład po zdarzeniu `push`. Pozwala to na automatyczne uruchamianie zewnętrznych usług lub skryptów.
+
+### Konfiguracja Webhooka w GitHub
+
+Aby ustawić webhook w swoim repozytorium na GitHubie, który będzie wywoływał zdarzenie po `push`, należy wykonać następujące kroki:
+
+1. **Przejdź do ustawień swojego repozytorium na GitHubie**:
+   - Otwórz swoje repozytorium na GitHubie.
+   - Wejdź w zakładkę **Settings** > **Webhooks**.
+
+2. **Dodaj Webhook**:
+   - Kliknij **Add webhook**.
+   - W polu **Payload URL** wklej adres URL, na który GitHub wyśle dane. Będzie to adres, który GitHub użyje do wysyłania żądań POST, gdy wystąpi zdarzenie. Jeśli nie masz własnej aplikacji, możesz skorzystać z serwisu **Webhook.site**, aby uzyskać tymczasowy URL.
+
+### Korzystanie z Webhook.site
+
+W przykadku braku własnego serwera lub aplikacji można skorzystać z **Webhook.site**, aby łatwo przetestować swój webhook. Serwis ten daje unikalny URL, na którym można odbierać i wyświetlać dane wysyłane przez GitHub.
+
+Uzyskiwanie URL przez **Webhook.site**:
+1. Wejdź na stronę [https://webhook.site](https://webhook.site).
+2. Otrzymasz unikalny URL (np. `https://webhook.site/xxxxxxxxxxxx`).
+3. Skopiuj ten URL i wklej go w pole **Payload URL** w ustawieniach webhooka na GitHubie.
+4. Ustaw **Content type** na **application/json**.
+5. Wybierz, które zdarzenia mają uruchamiać webhook. Możesz wybrać **Just the push event** lub inne, w zależności od swoich potrzeb.
+6. Kliknij **Add webhook**.
+
+### Testowanie Webhooka
+
+Po skonfigurowaniu webhooka, wykonaj `push` do swojego repozytorium GitHub:
+```bash
+git commit -m "Test webhook"
+git push origin main
+```
+
+## Różnica między paczkami produkcyjnymi, a developerskimi
+
+### 1. PACZKI PRODUKCYJNE (`dependencies`)
+
+- Instalacja: `npm install <nazwa-paczki>`
+- Są wymagane do działania aplikacji w środowisku produkcyjnym
+- Przykłady: `express`, `react`, `axios`, `mongoose`
+- W pliku `package.json`:
+  
+  ```json
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+  ```
+
+### 2. PACZKI DEWELOPERSKIE (`devDependencies`)
+
+- Instalacja: `npm install <nazwa-paczki> --save-dev`
+- Używane tylko podczas tworzenia aplikacji (testy, narzędzia, lintery)
+- Nie są potrzebne w produkcji
+- Przykłady: `nodemon`, `eslint`, `jest`, `webpack`
+- W pliku `package.json`:
+
+```json
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+```
+## Czyszczenie pamięci podręcznej NPM
+
+### Polecenie
+
+```bash
+npm cache clean --force
+```
+
+### Opis
+
+NPM (_Node Package Manager_) używa pamięci podręcznej (`cache`), aby przyspieszyć instalację pakietów. Czasami jednak `cache` może zawierać nieaktualne lub uszkodzone dane, co powoduje błędy przy instalacji.
+
+Polecenie `npm cache clean` czyści pamięć podręczną. W nowszych wersjach NPM konieczne jest użycie flagi `--force`, ponieważ domyślnie operacja ta jest zablokowana jako potencjalnie niebezpieczna.
+
+### Kiedy stosować
+
+- Problemy z instalacją pakietów
+- Podejrzenie uszkodzenia `cache`
+- Ręczne modyfikacje katalogu `node_modules`
+- Przywracanie czystego środowiska
+
+### Dodatkowe polecenia diagnostyczne
+
+- Sprawdzenie lokalizacji `cache`:
+
+```bash
+npm config get cache
+```
+
+- Weryfikacja zawartości `cache`:
+
+```bash
+npm cache verify
+```
+## Sprawdzanie bezpieczeństwa zależności
+
+### Polecenia
+
+Aby przeskanować projekt pod kątem znanych luk bezpieczeństwa w zainstalowanych pakietach, należy wykonać:
+
+```bash
+npm audit
+```
+
+To polecenie analizuje zależności (zdefiniowane w `package-lock.json`) i porównuje je z bazą danych znanych podatności.
+
+Jeśli zostaną wykryte problemy, można spróbować je automatycznie naprawić:
+
+```bash
+npm audit fix
+```
+
+## Narzędzia diagnostyczne `npm`
+
+Podczas próby zainstalowania nieistniejącej wersji paczki (`express@99.99.99`) wystąpił błąd `ETARGET`. Do analizy użyto poniższych narzędzi:
+
+### 1. `npm config list`
+Wyświetla konfigurację lokalną i globalną, m.in. ścieżki, wersję Node.js i NPM.
+
+### 2. `npm doctor`
+Przeprowadza diagnostykę środowiska:
+- sprawdza połączenie z rejestrem,
+- weryfikuje wersje Node.js i NPM,
+- sprawdza obecność `git` i ścieżki do binariów.
+
+### 3. Pliki logów
+NPM automatycznie zapisuje logi błędów w katalogu:
+
+```bash
+C:\Users...\AppData\Local\npm-cache_logs\
+```
+
+Logi zawierają szczegóły pomocne przy rozwiązywaniu problemów.
+
+# Projekt demonstracyjny: npm vs Yarn
+
+Ten projekt pokazuje podstawowe operacje zarządzania zależnościami przy użyciu dwóch menedżerów pakietów: npm i Yarn.
+
+## Struktura
+
+- projekt-npm/     ← używa npm
+- projekt-yarn/    ← używa Yarn
+
+## Kroki wykonane w obu projektach
+
+1. Inicjalizacja projektu:
+   - `npm init -y` lub `yarn init -y`
+
+2. Instalacja pakietu lodash:
+   - `npm install lodash`
+   - `yarn add lodash`
+
+3. Aktualizacja pakietów:
+   - `npm update` oraz `npm outdated` (brak nowszych wersji)
+   - `yarn upgrade` oraz `yarn upgrade lodash` (brak nowszych wersji)
+
+4. Test działania:
+   - Plik `index.js` zawiera:
+     ```js
+     const _ = require('lodash');
+     console.log(_.shuffle([1, 2, 3, 4]));
+     ```
+   - Uruchomienie: `node index.js`
+
+## Wynik działania
+
+Program poprawnie losowo miesza tablicę liczb. Przykład wyników:
+
+```bash
+[ 2, 4, 3, 1 ] // yarn 
+[ 2, 1, 4, 3 ] // npm
+```
+
+## `pnpm`:
+
+`pnpm` to menedżer pakietów dla JavaScript i Node.js, który działa szybciej i oszczędza miejsce na dysku. Zamiast przechowywać kopie pakietów w każdym projekcie, używa jednego centralnego magazynu, co przyspiesza instalacje i redukuje zużycie pamięci. Dzięki temu jest bardziej wydajny i bezpieczny niż `npm` czy `Yarn`.
 
